@@ -6,7 +6,7 @@ import { testConfig } from '../test.config';
 import { MatterDeatils } from '../pages/MatterDetails';
 
 
-test.skip("to create a new matter ", async ({ page }) => {
+test("to create a new matter ", async ({ page }) => {
    //creating object for TestConfig
    const Config = new testConfig();
    await page.goto(Config.DevUrl);
