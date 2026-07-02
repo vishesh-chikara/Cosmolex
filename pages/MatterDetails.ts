@@ -84,10 +84,10 @@ export class MatterDeatils {
 
     }
 
-    async GettingOutput(): Promise<boolean> {
+   /*  async GettingOutput(): Promise<boolean> {
        await this.errorPopup.isVisible();
        return true;
     }
-
+        */
 
 }

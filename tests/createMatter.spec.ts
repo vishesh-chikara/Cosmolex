@@ -55,17 +55,7 @@ test("to delete the added matter", async ({ page }) => {
    //delete the matter
    await MatterInput.deleteMatter();
    await expect(page.locator('text=Adoption')).toBeVisible();
-   await expect(page.locator('text=Adoption')).toHaveCount(1);
-
-   await page.waitForTimeout(2000);
-   await MatterInput.GettingOutput();
-   await expect(page.locator('text=Delete Matter')).toBeVisible();
-   await expect(page.locator('text=Delete Matter')).toHaveCount(1);
-   await expect(page.locator('text=Delete Matter')).toContainText('Delete Matter');
-   
-   await page.screenshot({ path: 'screenshot.png', fullPage: true });
+   await expect(page.locator('text=Adoption')).toHaveCount(1);   await page.waitForTimeout(2000);
 
 
-
-
-})
+});

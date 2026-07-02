@@ -24,7 +24,7 @@ workers: 1,
     headless : false,
     viewport : {width :1280, height: 720},
     ignoreHTTPSErrors: true,
-    permissions : ['Geolocation'],
+    //permissions : ['Geolocation'],
   },
 
  // grep: /@master/,
