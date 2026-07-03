@@ -32,7 +32,7 @@ test("to create a new matter ", async ({ page }) => {
    await page.waitForTimeout(3000);
 
    await MatterInput.disabled_PM();
-   await page.waitForTimeout(2000);
+   await page.waitForTimeout(3000);
 
    await MatterInput.Click_Save_btn();
    await page.waitForTimeout(3000);
