@@ -1,7 +1,7 @@
 import { Page, test, expect } from "@playwright/test";
 
 import { HomePage } from '../pages/HomePage';
-import { DashBoardPage } from "../pages/dashBoardPage";
+import { DashBoardPage } from "../pages/DashBoardPage";
 import { testConfig } from '../test.config';
 import { MatterDeatils } from '../pages/MatterDetails';
 
