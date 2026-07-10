@@ -17,10 +17,11 @@ test("to validate Signup ", async ({ page }) => {
        await homepage.isHomepageExist();
        await expect(page).toHaveTitle("CosmoLex - Login");
        await expect(page).toHaveURL("https://dev4.cosmolex.com/login");
+       await expect(page).toHaveTitle("CosmoLex - Login");
 
        await homepage.PerformSignIn();
-       await expect(page).toHaveTitle("Admin");
        await expect(page).toHaveURL("https://dev4.cosmolex.com/nxg/");
+       await expect(page).toHaveTitle("Admin");
 
        await page.waitForTimeout(3000);
        await page.close();

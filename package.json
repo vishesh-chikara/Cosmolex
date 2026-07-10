@@ -9,7 +9,7 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@playwright/test": "^1.61.0",
+    "@playwright/test": "^1.61.1",
     "@types/node": "^25.9.3",
     "allure-playwright": "^3.10.0"
   },
@@ -17,5 +17,16 @@
     "@faker-js/faker": "^10.5.0",
     "csv-parse": "^7.0.0",
     "xlsx": "^0.18.5"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishesh-chikara/Cosmolex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vishesh-chikara/Cosmolex/issues"
+  },
+  "homepage": "https://github.com/vishesh-chikara/Cosmolex#readme"
 }
