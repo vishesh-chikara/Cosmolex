@@ -28,7 +28,9 @@ export class DashBoardPage {
 
     async Open_Matterdashboard() {
         try {
+            await this.Clickon_MatterSidebar.waitFor({ state: 'visible' });
             await this.Clickon_MatterSidebar.click();
+           
             // await this.btn_AddMatter.click();
         } catch (error) {
             console.log(`exception occured while clicking on my account' : ${error}`);

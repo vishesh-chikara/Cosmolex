@@ -12,14 +12,7 @@ export class MatterDeatils {
     private readonly ProjectManagement_btn: Locator;
     private readonly Save_btn: Locator;
 
-    //For delete matter
 
-    private readonly Find_Matter: Locator;
-    private readonly CheckMatter: Locator;
-    private readonly threeDots: Locator;
-    private readonly Delete_btn: Locator;
-    private readonly Delete_Confirm_btn: Locator;
-    private readonly errorPopup: Locator;
 
     //Constructor
     constructor(page: Page) {
@@ -32,16 +25,6 @@ export class MatterDeatils {
         this.ProjectManagement_btn = page.locator("//input[@name='projectManagementEnabled']")
         this.Save_btn = page.getByText('Save', { exact: true });
 
-        //For delete matter
-        const row = page.locator('[role="row"]').filter({
-            hasText: 'Adoption'
-        });
-        this.Find_Matter = row;
-        this.CheckMatter = row.getByRole('checkbox');
-        this.threeDots = page.getByRole('button', { name: 'More actions' }).first();
-        this.Delete_btn = page.getByText('Delete', { exact: true });
-        this.Delete_Confirm_btn = page.getByText('Delete', { exact: true });
-        this.errorPopup = page.getByText('Delete Matter', { exact: true })
 
 
     }
@@ -49,16 +32,24 @@ export class MatterDeatils {
     //Action Items   
 
     async AddMatter(): Promise<void> {
+        await this.AddMatter_btn.waitFor({ state: 'visible' });
         await this.AddMatter_btn.click();
+
     }
 
     async set_ClientName(): Promise<void> {
+        await this.Enter_ClientName.waitFor({ state: 'visible' });
         await this.Enter_ClientName.fill('Client');
+
+        await this.selectClient_dropdown.waitFor({ state: 'visible' });
         await this.selectClient_dropdown.click();
     }
 
     async set_MatterName(): Promise<void> {
+        await this.Enter_MatterName.waitFor({ state: 'visible' });
         await this.Enter_MatterName.click();
+
+        await this.selectMatter_Dropdown.waitFor({ state: 'visible' });
         await this.selectMatter_Dropdown.click();
 
 
@@ -70,24 +61,14 @@ export class MatterDeatils {
     }
 
     async Click_Save_btn(): Promise<void> {
+        await this.Save_btn.waitFor({ state: 'visible' });
         await this.Save_btn.click();
     }
 
-    //Delete the matter
-    async deleteMatter(): Promise<void> {
-        await this.Find_Matter.scrollIntoViewIfNeeded();
-        await this.CheckMatter.check();
-
-        await this.threeDots.click();
-        await this.Delete_btn.click();
-        await this.Delete_Confirm_btn.click();
-
-    }
-
-   /*  async GettingOutput(): Promise<boolean> {
-       await this.errorPopup.isVisible();
-       return true;
-    }
-        */
+    /*  async GettingOutput(): Promise<boolean> {
+        await this.errorPopup.isVisible();
+        return true;
+     }
+         */
 
 }

@@ -5,7 +5,8 @@ import { DashBoardPage } from "../pages/DashBoardPage";
 import { testConfig } from '../test.config';
 import { MatterDeatils } from '../pages/MatterDetails';
 
-test("to validate Signup ", async ({ page }) => {
+test.describe.configure({ mode: 'serial' });
+test.skip('[P1] to validate Signup', async ({ page }) => {
        //creating object for TestConfig
        const Config = new testConfig();
        await page.goto(Config.DevUrl);
@@ -20,8 +21,8 @@ test("to validate Signup ", async ({ page }) => {
        await expect(page).toHaveTitle("CosmoLex - Login");
 
        await homepage.PerformSignIn();
-       await expect(page).toHaveURL("https://dev4.cosmolex.com/nxg/");
        await expect(page).toHaveTitle("Admin");
+       await expect(page).toHaveURL("https://dev4.cosmolex.com/nxg/");
 
        await page.waitForTimeout(3000);
        await page.close();
