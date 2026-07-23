@@ -9,7 +9,7 @@ export class deleteMatter {
     private readonly threeDots: Locator;
     private readonly Delete_btn: Locator;
     private readonly Delete_Confirm_btn: Locator;
-    private readonly errorPopup: Locator;
+    //private readonly errorPopup: Locator;
 
 
     constructor(page: Page) {
@@ -23,7 +23,7 @@ export class deleteMatter {
         this.threeDots = page.getByRole('button', { name: 'More actions' }).first();
         this.Delete_btn = page.getByText('Delete', { exact: true });
         this.Delete_Confirm_btn = page.getByText('Delete', { exact: true });
-        this.errorPopup = page.getByText('Delete Matter', { exact: true })
+       // this.errorPopup = page.getByText('Matter is associated with Time/Expense cards and cannot be deleted', { exact: true });
 
     }
 
@@ -34,6 +34,7 @@ export class deleteMatter {
         await this.threeDots.click();
         await this.Delete_btn.click();
         await this.Delete_Confirm_btn.click();
+        //await this.errorPopup.waitFor({ state: 'visible' });
     }
 
 }

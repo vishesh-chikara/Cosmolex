@@ -19,8 +19,12 @@ export class addTimeCard {
         });
         this.Find_Matter = row;
         //this.Open_Matter = page.getByText('Adoption', { exact: true })
-        this.clickOnbilling = page.locator("//div[contains(text(),'Billing')]")
-        this.clickOnadd_btn = page.getByText('Add', { exact: true });
+       // this.clickOnbilling = page.locator("//div[contains(text(),'Billing')]");
+       this.clickOnbilling =page.getByRole('tab', { name: 'Billing' }).first();
+
+       // this.clickOnadd_btn = page.getByText('Add', { exact: true });
+       this.clickOnadd_btn =page.getByRole('button', { name: 'Add' });
+       
         this.select_timeCard = page.getByRole('menuitem', { name: 'Timecard' });
         this.Enter_taskName = page.getByTestId('task-dropdown-1');
         this.selectTask_dropdown = page.getByRole('option', { name: 'Acknowledgment of Service' })

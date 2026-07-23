@@ -25,6 +25,7 @@ test('[P2] to create a new matter ', async ({ page }) => {
    await MatterInput.AddMatter();
    await MatterInput.set_ClientName();
    await MatterInput.set_MatterName();
+   await page.waitForTimeout(2000);
    await MatterInput.disabled_PM();
    await MatterInput.Click_Save_btn();
 

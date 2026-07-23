@@ -24,8 +24,10 @@ test('[P4] to delete the added matter', async ({ page }) => {
 
     //delete the matter
     await MatterDelete.deleteMatter();
+    
     await expect(page.locator('text=Adoption')).toBeVisible();
     await expect(page.locator('text=Adoption')).toHaveCount(1);
+   // await expect(page.textContent('Matter is associated with Time/Expense cards and cannot be deleted')).toBeTruthy();
     await page.waitForTimeout(2000);
 
 
